@@ -4,7 +4,13 @@ const playerChoiceDisplay = document.querySelector("#player-choice");
 const computerChoiceDisplay = document.querySelector("#computer-choice");
 const resultMessage = document.querySelector("#result-message");
 
+const playerScoreDisplay = document.querySelector("#player-score");
+const computerScoreDisplay = document.querySelector("#computer-score");
+
 const choices = ["Rock", "Paper", "Scissors"];
+
+let playerScore = 0;
+let computerScore = 0;
 
 function getComputerChoice() {
   const randomIndex = Math.floor(Math.random() * choices.length);
@@ -38,5 +44,16 @@ buttons.forEach(function (button) {
     playerChoiceDisplay.textContent = `You chose: ${playerChoice}`;
     computerChoiceDisplay.textContent = `Computer chose: ${computerChoice}`;
     resultMessage.textContent = result;
+
+    if (result === "You win!") {
+      playerScore++;
+    }
+
+    if (result === "Computer wins!") {
+      computerScore++;
+    }
+
+    playerScoreDisplay.textContent = playerScore;
+    computerScoreDisplay.textContent = computerScore;
   });
 });

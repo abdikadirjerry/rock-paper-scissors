@@ -1,4 +1,4 @@
-const buttons = document.querySelectorAll("button");
+const buttons = document.querySelectorAll(".choices button");
 
 const playerChoiceDisplay = document.querySelector("#player-choice");
 const computerChoiceDisplay = document.querySelector("#computer-choice");
@@ -6,6 +6,8 @@ const resultMessage = document.querySelector("#result-message");
 
 const playerScoreDisplay = document.querySelector("#player-score");
 const computerScoreDisplay = document.querySelector("#computer-score");
+
+const resetButton = document.querySelector("#reset-button");
 
 const choices = ["Rock", "Paper", "Scissors"];
 
@@ -56,4 +58,16 @@ buttons.forEach(function (button) {
     playerScoreDisplay.textContent = playerScore;
     computerScoreDisplay.textContent = computerScore;
   });
+});
+
+resetButton.addEventListener("click", function () {
+  playerScore = 0;
+  computerScore = 0;
+
+  playerScoreDisplay.textContent = playerScore;
+  computerScoreDisplay.textContent = computerScore;
+
+  playerChoiceDisplay.textContent = "You chose: -";
+  computerChoiceDisplay.textContent = "Computer chose: -";
+  resultMessage.textContent = "Choose your weapon!";
 });

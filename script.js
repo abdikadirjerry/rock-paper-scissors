@@ -1,1 +1,1 @@
-console.log("Rock Paper Scissors");
+console.log("Game loaded");
